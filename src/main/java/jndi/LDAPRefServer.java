@@ -61,22 +61,6 @@ public class LDAPRefServer implements Runnable{
 
     @Override
     public void run () {
-//        int port = 1389;
-
-//        try {
-//            Class.forName("util.Mapper");
-//        }catch (ClassNotFoundException e){
-//            e.printStackTrace();
-//        }
-
-//        if ( args.length < 1 || args[ 0 ].indexOf('#') < 0 ) {
-//            System.err.println(LDAPRefServer.class.getSimpleName() + " <codebase_url#classname> [<port>]"); //$NON-NLS-1$
-//            System.exit(-1);
-//        }
-//        else if ( args.length > 1 ) {
-//            port = Integer.parseInt(args[ 1 ]);
-//        }
-
         try {
             InMemoryDirectoryServerConfig config = new InMemoryDirectoryServerConfig(LDAP_BASE);
             config.setListenerConfigs(new InMemoryListenerConfig(

