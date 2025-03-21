@@ -8,9 +8,9 @@
 
 ## Description
 
-JNDI-Injection-Exploit is a tool for generating workable JNDI links and provide background services by starting RMI server,LDAP server and HTTP server. RMI server and LDAP server are based on  [marshals](https://github.com/mbechler/marshalsec) and modified further to link with HTTP server.
+JNDI-Injection-Exploit is a tool for generating workable JNDI links and provide background services by starting RMI server,LDAP server and HTTP server. RMI server and LDAP server are based on  [marshals](https://github.com/mbechler/marshalsec) and modified further to link with HTTP server. 
 
-Using this tool allows you get JNDI links, you can insert these links into your **POC** to test vulnerability.
+Using this tool allows you get JNDI links, you can insert these links into your **POC** to test vulnerability. 
 
 For example, this is a Fastjson vul-poc:
 
@@ -26,7 +26,7 @@ All information and code is provided solely for educational purposes and/or test
 
 ## Usage
 
-Run as
+ Run as
 
 ```shell
 $ java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar [-C] [command] [-A] [address]
@@ -48,15 +48,15 @@ Points for attention:
 
   or you can change the default port in the run.ServerStart class line 26~28.
 
-- your command is passed to **Runtime.getRuntime().exec()** as parameters,
+- your command is passed to **Runtime.getRuntime().exec()** as parameters, 
 
   so you need to ensure your command is workable in method exec().
-
+  
   **Command in bash like "bash -c ...." need to add Double quotes.**
 
 ## Examples
 
-Local demo:
+ Local demo:
 
 1. Start the tool like this:
 
@@ -64,7 +64,7 @@ Local demo:
    $ java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "open /Applications/Calculator.app" -A "127.0.0.1"
    ```
 
-   Screenshot:
+    Screenshot:
 
    ![image-20191018154346759](https://github.com/welk1n/JNDI-Injection-Exploit/blob/master/screenshots/1.png)
 
